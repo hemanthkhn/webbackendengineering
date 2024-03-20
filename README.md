@@ -1,6 +1,3 @@
-Sure, here's a README file content that you can use for your GitHub repository:
-
----
 
 # E-commerce API
 
@@ -20,7 +17,7 @@ This is a simple Flask-based API for managing e-commerce products. It allows use
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/ecommerce-api.git
+   git clone https://github.com/hemanthkhn/ecommerce-api.git
    ```
 
 2. Install the required dependencies:
