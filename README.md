@@ -52,14 +52,4 @@ This is a simple Flask-based API for managing e-commerce products. It allows use
 
 The API documentation is available using Swagger UI. Access it at `http://localhost:5000/swagger`.
 
-## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-You can replace `your-username` with your GitHub username and update any additional information or customization as needed.
