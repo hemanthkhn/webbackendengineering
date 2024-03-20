@@ -30,12 +30,12 @@ This is a simple Flask-based API for managing e-commerce products. It allows use
    
    - Make sure you have MySQL installed and running on your machine.
    - Create a database named `ecommerce_db`.
-   - Update the MySQL configuration in `app.py` with your MySQL credentials.
+   - Update the MySQL configuration in `main.py` with your MySQL credentials.
 
 4. Run the Flask app:
 
    ```bash
-   python app.py
+   python3 main.py
    ```
 
 5. Access the API at `http://localhost:5000`.
