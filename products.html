@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <a href="/">Go to Homepage</a>
+    <button onclick="showAddProductForm()">Add New Product</button>
+    <button onclick="showDeleteProductForm()">Delete a Product</button>
+
+    <!-- Form for adding a new product (hidden by default) -->
+    <div id="addProductForm" style="display: none;">
+        <h2>Add New Product</h2>
+        <form id="newProductForm" action="/add_product" method="POST">
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" name="productName" required><br>
+            <label for="productPrice">Price:</label>
+            <input type="number" id="productPrice" name="productPrice" step="0.01" required><br>
+            <label for="productDescription">Description:</label>
+            <textarea id="productDescription" name="productDescription" required></textarea><br>
+            <input type="submit" value="Add Product">
+        </form>
+    </div>
+
+    <!-- Form for deleting a product (hidden by default) -->
+    <div id="deleteProductForm" style="display: none;">
+        <h2>Delete a Product</h2>
+        <form id="deleteProductForm" action="/delete_product" method="POST">
+            <label for="productId">Product ID:</label>
+            <input type="number" id="productId" name="productId" required><br>
+            <input type="submit" value="Delete Product">
+        </form>
+    </div>
+    
+
+    <!-- Display products -->
+    {% if products %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product[0] }}</td>
+                <td>{{ product[1] }}</td>
+                <td>${{ product[2] }}</td>
+                <td>{{ product[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No products available</p>
+    {% endif %}
+
+    <script>
+        function showAddProductForm() {
+            document.getElementById("addProductForm").style.display = "block";
+            document.getElementById("deleteProductForm").style.display = "none";
+        }
+
+        function showDeleteProductForm() {
+            document.getElementById("deleteProductForm").style.display = "block";
+            document.getElementById("addProductForm").style.display = "none";
+        }
+    </script>
+</body>
+</html>
